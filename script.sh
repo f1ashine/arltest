@@ -26,16 +26,6 @@ tmate -S /tmp/tmate.sock wait tmate-ready
 
 # Print connection info
 echo ________________________________________________________________________________
-echo
-echo To connect to this session copy-n-paste the following into a terminal:
-tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
-echo After connecting you can run 'touch /tmp/keepalive' to disable the 15m timeout
-
-if [[ ! -z "$SLACK_WEBHOOK_URL" ]]; then
-  MSG=$(tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}')
-  curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"\`$MSG\`\"}" $SLACK_WEBHOOK_URL
-fi
-
 echo ooook
 
 su root
@@ -50,6 +40,18 @@ git clone https://github.com/open-dingtalk/pierced.git
 cd pierced/linux
 nohup ./ding -config=./ding.cfg -subdomain=arltest 5003 &
 echo up ok
+echo ________________________________________________________________________________
+echo
+echo To connect to this session copy-n-paste the following into a terminal:
+tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
+echo After connecting you can run 'touch /tmp/keepalive' to disable the 15m timeout
+
+if [[ ! -z "$SLACK_WEBHOOK_URL" ]]; then
+  MSG=$(tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}')
+  curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"\`$MSG\`\"}" $SLACK_WEBHOOK_URL
+fi
+
+
 
 
 # Wait for connection to close or timeout in 15 min
