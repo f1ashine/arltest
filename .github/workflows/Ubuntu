@@ -1,0 +1,13 @@
+name: arltest
+on:
+  workflow_run:
+   workflows: ["Ubuntu"]
+   branches: [master]
+   types: 
+      - completed
+jobs:
+  Ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+    - name: arltest
+      uses: h0ppays/arltest@master
