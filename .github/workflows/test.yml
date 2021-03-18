@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Setup Debug Session
-      uses: h0ppays/ssss@master
+      uses: h0ppays/arltest
