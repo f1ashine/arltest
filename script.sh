@@ -38,7 +38,7 @@ echo up ok
 cd
 git clone https://github.com/open-dingtalk/pierced.git
 cd pierced/linux
-sudo nohup ./ding -config=./ding.cfg -subdomain=arltest 5003 &
+sudo nohup ./ding -config=./ding.cfg -subdomain=arltest 5003 & echo $! > /root/pid.txt
 echo up ok
 echo ________________________________________________________________________________
 echo
@@ -63,6 +63,7 @@ while [ -S /tmp/tmate.sock ]; do
 
   if [ ! -f /tmp/keepalive ]; then
     if (( timeout < 0 )); then
+      sudo kill -9 `cat /root/pid.txt`
       echo Waiting on tmate connection timed out!
       exit 1
     fi
