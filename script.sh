@@ -59,6 +59,7 @@ timeout=$((1*60))
 while [ -S /tmp/tmate.sock ]; do
   sleep 1
   timeout=$(($timeout-1))
+  echo timeout
 
   if [ ! -f /tmp/keepalive ]; then
     if (( timeout < 0 )); then
