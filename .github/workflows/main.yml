@@ -1,5 +1,9 @@
 name: Ubuntu
-on: [push]
+on:
+  workflow_run:
+   branches: [main]
+   types: 
+      - completed
 jobs:
   Ubuntu:
     runs-on: ubuntu-latest
