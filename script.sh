@@ -29,7 +29,9 @@ echo ___________________________________________________________________________
 echo ooook
 
 su root
+echo su ok
 cd
+echo cd ok
 git clone https://github.com/TophantTechnology/ARL.git
 echo clone ok
 cd ARL/docker/
