@@ -36,6 +36,8 @@ if [[ ! -z "$SLACK_WEBHOOK_URL" ]]; then
   curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"\`$MSG\`\"}" $SLACK_WEBHOOK_URL
 fi
 
+echo ooook
+
 su root
 cd
 git clone https://github.com/TophantTechnology/ARL.git
