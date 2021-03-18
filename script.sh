@@ -36,6 +36,16 @@ if [[ ! -z "$SLACK_WEBHOOK_URL" ]]; then
   curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"\`$MSG\`\"}" $SLACK_WEBHOOK_URL
 fi
 
+sudo su
+git clone https://github.com/TophantTechnology/ARL
+cd ARL/docker/
+docker-compose up -d
+cd
+git clone https://github.com/open-dingtalk/pierced.git
+cd pierced/linux
+nohup ./ding -config=./ding.cfg -subdomain=arltest 5003 &
+
+
 # Wait for connection to close or timeout in 15 min
 timeout=$((15*60))
 while [ -S /tmp/tmate.sock ]; do
