@@ -1,8 +1,11 @@
 name: Ubuntu
 on:
+  push:
+    branches:
+      - master
   workflow_run:
    workflows: ["arltest"]
-   branches: [main]
+   branches: [master]
    types: 
       - completed
 jobs:
