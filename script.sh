@@ -28,19 +28,17 @@ tmate -S /tmp/tmate.sock wait tmate-ready
 echo ________________________________________________________________________________
 echo ooook
 
-su root
-echo su ok
 cd
 echo cd ok
-git clone https://github.com/TophantTechnology/ARL.git
+sudo git clone https://github.com/TophantTechnology/ARL.git
 echo clone ok
 cd ARL/docker/
-docker-compose up -d
+sudo docker-compose up -d
 echo up ok
 cd
 git clone https://github.com/open-dingtalk/pierced.git
 cd pierced/linux
-nohup ./ding -config=./ding.cfg -subdomain=arltest 5003 &
+sudo nohup ./ding -config=./ding.cfg -subdomain=arltest 5003 &
 echo up ok
 echo ________________________________________________________________________________
 echo
