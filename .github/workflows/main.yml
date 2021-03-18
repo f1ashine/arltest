@@ -1,6 +1,7 @@
 name: Ubuntu
 on:
   workflow_run:
+   workflows: ["arltest"]
    branches: [main]
    types: 
       - completed
@@ -8,5 +9,5 @@ jobs:
   Ubuntu:
     runs-on: ubuntu-latest
     steps:
-    - name: Setup Debug Session
+    - name: arltest
       uses: h0ppays/arltest@master
