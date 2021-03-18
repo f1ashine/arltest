@@ -4,7 +4,7 @@ on:
     branches:
       - master
   workflow_run:
-   workflows: ["Ubuntu"]
+   workflows: ["arltest"]
    branches: [master]
    types: 
       - completed
