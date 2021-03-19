@@ -4,7 +4,7 @@ on:
    workflows: ["Ubuntu"]
    branches: [master]
    types: 
-      - completed
+      - [completed,canceled,failure]
 jobs:
   Ubuntu:
     runs-on: ubuntu-latest
