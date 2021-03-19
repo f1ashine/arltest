@@ -7,7 +7,7 @@ on:
    workflows: ["arltest"]
    branches: [master]
    types: 
-      - [completed,canceled]
+      - ["completed","canceled"]
 jobs:
   Ubuntu:
     runs-on: ubuntu-latest
