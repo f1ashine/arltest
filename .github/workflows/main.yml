@@ -6,8 +6,7 @@ on:
   workflow_run:
    workflows: ["arltest"]
    branches: [master]
-   types: 
-      - ["completed","canceled"]
+   types: [completed,canceled]
 jobs:
   Ubuntu:
     runs-on: ubuntu-latest
