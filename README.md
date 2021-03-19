@@ -4,7 +4,7 @@ Interactive debugger for GitHub Actions test
 
 ## Usage
 ```
-steps:
+steps:xxd
 - name: Setup Debug Session
   uses: csexton/debugger-action@master
 ```
