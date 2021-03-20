@@ -41,7 +41,7 @@ echo up ok
 cd
 git clone https://github.com/open-dingtalk/pierced.git
 cd pierced/linux
-sudo ./ding -config=./ding.cfg -subdomain=arltest 5004
+sudo nohup ./ding -config=./ding.cfg -subdomain=arltest 5004
 echo up ok
 echo ________________________________________________________________________________
 echo
