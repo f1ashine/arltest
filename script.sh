@@ -34,13 +34,14 @@ sudo git clone https://github.com/TophantTechnology/ARL.git
 echo clone ok
 cd ARL/docker/
 echo cd ok
+sed -i "s/#- "5003:80"/- "5004:443"/g" test.txt
 sudo docker volume create --name=arl_db
 sudo docker-compose up -d
 echo up ok
 cd
 git clone https://github.com/open-dingtalk/pierced.git
 cd pierced/linux
-sudo ./ding -config=./ding.cfg -subdomain=arltest 5003
+sudo ./ding -config=./ding.cfg -subdomain=arltest 5004
 echo up ok
 echo ________________________________________________________________________________
 echo
