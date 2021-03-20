@@ -33,7 +33,7 @@ echo cd ok
 sudo git clone https://github.com/TophantTechnology/ARL.git
 echo clone ok
 cd ARL/docker/
-cd ok
+echo cd ok
 sudo docker-compose up -d
 echo up ok
 cd
