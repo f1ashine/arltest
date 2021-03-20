@@ -34,6 +34,7 @@ sudo git clone https://github.com/TophantTechnology/ARL.git
 echo clone ok
 cd ARL/docker/
 echo cd ok
+sudo docker volume create --name=arl_db
 sudo docker-compose up -d
 echo up ok
 cd
