@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: arltest
-      uses: h0ppays/arltest@master
+      uses: wefew0213/arltest@master
