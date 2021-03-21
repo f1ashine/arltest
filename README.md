@@ -9,7 +9,7 @@ steps:xxdsdf
   uses: csexton/debugger-action@master
 ```
 
-In the log for the action you will see:
+In the log for the action you will seesdfsdf:
 
 ```
 Running tmate...
