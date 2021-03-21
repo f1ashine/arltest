@@ -3,10 +3,11 @@ on:
   push:
     branches:
       - master
-  workflow_run:
-   workflows: ["arltest"]
-   branches: [master]
-   types: [completed,canceled]
+  schedule:
+    - cron: '0 0 * * *'
+    - cron: '0 6 * * *'
+    - cron: '0 12 * * *'
+    - cron: '0 18 * * *'
 jobs:
   Ubuntu:
     runs-on: ubuntu-latest
