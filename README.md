@@ -1,9 +1,5 @@
 # Action Debugger
-
-Interactive debugger for GitHub Actions testsdf
-
-## Usage
-```
+fdg
 steps:xxdsdf
 - name: Setup Debug Session
   uses: csexton/debugger-action@master
