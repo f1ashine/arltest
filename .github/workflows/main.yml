@@ -16,5 +16,6 @@ jobs:
       uses: f1ashine/arltest@master
     
     - name: Create local changes
-        run: |
+        run:|
           git add res.txt
+        shell:bash
