@@ -13,13 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: arltest
-      uses: f1ashine/arltest@master
+      uses: actions/checkout@master
     
     - name: make files
       run: |
-          mkdir output
-          git add output/
-          git add output/test.txt
+          echo `whoami` > res.txt
+          git add res.txt
+    
+    - name: Commit results to Github
+      run: |
+          git config --local user.email "xxx@xxx.io"
+          git config --global user.name "xxx"
+          git commit -m "Scan-Actions report" -a --allow-empty
 
     - name: Push changes
       uses: ad-m/github-push-action@master
