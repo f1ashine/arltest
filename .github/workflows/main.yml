@@ -15,9 +15,9 @@ jobs:
     - name: arltest
       uses: actions/checkout@master
     
-    - name: make files
+    - name: operations
       run: |
-          echo `whoami` > res.txt
+          echo `python3 -V` > res.txt
           git add res.txt
     
     - name: Commit results to Github
