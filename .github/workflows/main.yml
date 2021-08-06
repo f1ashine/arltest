@@ -14,3 +14,7 @@ jobs:
     steps:
     - name: arltest
       uses: f1ashine/arltest@master
+    
+    - name: Create local changes
+        run: |
+          git add res.txt
