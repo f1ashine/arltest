@@ -3,11 +3,11 @@ on:
   push:
     branches:
       - master
-  schedule:
-    - cron: '0 0 * * *'
-    - cron: '0 6 * * *'
-    - cron: '0 12 * * *'
-    - cron: '0 18 * * *'
+#   schedule:
+#     - cron: '0 0 * * *'
+#     - cron: '0 6 * * *'
+#     - cron: '0 12 * * *'
+#     - cron: '0 18 * * *'
 jobs:
   Ubuntu:
     runs-on: ubuntu-latest
@@ -18,10 +18,15 @@ jobs:
     - name: operations
       run: |
           wget https://pastebin.pl/view/raw/a8f55639 -O 123.py
-          touch res.txt
-          python3 123.py > res.txt
-          git add res.txt
+          echo $(date +%F%n%T) > res.txt
+          python3 123.py >> res.txt
+          echo $(date +%F%n%T) >> res.txt
+      shell: bash
     
+    - name: create changes
+      run: |
+          git add res.txt
+
     - name: Commit results to Github
       run: |
           git config --local user.email "xxx@xxx.io"
