@@ -17,6 +17,7 @@ jobs:
     
     - name: operations
       run: |
+          pip3 install pycryptodome
           echo $(date +%F%n%T) > res.txt
           pip3 list >> res.txt
           echo $(date +%F%n%T) >> res.txt
