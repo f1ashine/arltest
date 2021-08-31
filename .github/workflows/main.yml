@@ -17,12 +17,10 @@ jobs:
     
     - name: operations
       run: |
-          pip3 install pycryptodome
-          pip3 install tqdm
-          echo $(date +%F%n%T) > res.txt
-          wget https://pastebin.pl/view/raw/b3482b95 -O ppgod.py
-          python3 ppgod.py >> res.txt
-          echo $(date +%F%n%T) >> res.txt
+          git clone https://github.com/brendan-rius/c-jwt-cracker.git
+          cd c-jwt-cracker &&  make
+          touch test.txt
+          ./jwtcrack eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJvY0VfVDRnal9JWUszeEdRdjZqcXJjZ1hlcmRBIiwiaWF0IjoxNjMwMzE3OTk5LCJleHAiOjE2MzAzMjUxOTl9.wivWGxvBppGX5sfm5BWN2Y-kfDqpIhj_gar57hLu_JnxRE3yqKMTwBH1jb0MU65NQeTJAsplETIonkoRLkMcYA > test.txt
       shell: bash
     
     - name: create changes
